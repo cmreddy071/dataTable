@@ -1,0 +1,18 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th class="sticky-th" *ngFor="let headerColumn of tableHeader">
+          {{ headerColumn.displayName }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of tableData">
+        <td *ngFor="let headerColumn of tableHeader">
+          <p>{{ data[headerColumn.columnName] }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+<div>
+  <header class="app-header">
+    <div>
+      <h1>Angular Data Table</h1>
+    </div>
+    <button class="menu-item" (click)="navigateTo('/paginated-data-table')">
+      Table With Pagination
+    </button>
+    <button class="menu-item" (click)="navigateTo('/data-table')">
+      Table Without Pagination
+    </button>
+  </header>
+  <div class="app-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

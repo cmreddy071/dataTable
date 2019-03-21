@@ -1,0 +1,70 @@
+.table-container {
+  overflow: auto;
+  height: calc(100vh - 80px);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.sticky-th {
+  top: -1px;
+  position: sticky;
+  z-index: 100;
+  background-color: #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  min-width: 100px;
+}
+
+td > p {
+  margin: 0;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table thead {
+  background-color: #f2f2f2;
+}
+
+.pagination {
+  display: flex;
+  height: 50px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pagination > div {
+  margin: 16px;
+}
+
+.pagination button {
+  background: #03a9f4;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: no-drop;
+  opacity: 0.6;
+}
+
+.sticky-td {
+  position: sticky;
+  z-index: 100;
+  background: #fff;
+  padding: 0;
+  bottom: 0;
+}

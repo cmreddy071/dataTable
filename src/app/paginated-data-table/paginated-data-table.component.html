@@ -1,0 +1,87 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th class="sticky-th" *ngFor="let headerColumn of tableHeader">
+          {{ headerColumn.displayName }}
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of tableData">
+        <td *ngFor="let headerColumn of tableHeader">
+          <p>{{ data[headerColumn.columnName] }}</p>
+        </td>
+        <td>
+          <button (click)="handleSubmit(data['id'], data['status'])" class="submit-button">Submit</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="sticky-td" colspan="20">
+          <div *ngIf="pagination.totalPages > 0" class="pagination">
+            <div>
+              <small>Items per page</small> &nbsp;
+              <select
+                value="{{ pagination.perPageCount }}"
+                (change)="showPerPageItems($event.target.value)"
+              >
+                <option
+                  *ngFor="let pageVal of perPageItemsList"
+                  value="{{ pageVal }}"
+                  >{{ pageVal }}</option
+                >
+              </select>
+            </div>
+            <div>
+              <button
+                [ngClass]="{ disabled: pagination.currentPage === 1 }"
+                (click)="setPage('first')"
+              >
+                First
+              </button>
+            </div>
+            <div>
+              <button
+                [ngClass]="{ disabled: pagination.currentPage === 1 }"
+                (click)="setPage('previous')"
+              >
+                Previous
+              </button>
+            </div>
+            <div>
+              <small>
+                showing page <em>{{ pagination.currentPage }}</em> of &nbsp;
+                <em>{{ pagination.totalPages }}</em></small
+              >
+            </div>
+            <div>
+              <button
+                [ngClass]="{
+                  disabled: pagination.currentPage === pagination.totalPages
+                }"
+                (click)="setPage('next')"
+              >
+                Next
+              </button>
+            </div>
+            <div>
+              <button
+                [ngClass]="{
+                  disabled: pagination.currentPage === pagination.totalPages
+                }"
+                (click)="setPage('last')"
+              >
+                Last
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

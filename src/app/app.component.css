@@ -1,0 +1,31 @@
+.app-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.app-header {
+  padding: 16px;
+  background-color: #E91E63;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.app-header h1 {
+  color: #fff;
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  margin: 0 16px;
+  cursor: pointer;
+}
+
+.menu-item:hover, .menu-item:focus {
+  outline: none;
+}
